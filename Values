@@ -1,0 +1,11 @@
+public class FinalValues {
+	final int scale = 100;      // a constant
+	final int answer = (int)(Math.random() * scale);     // This value cannot be changed afterwards
+
+
+	public static void main(String[] args) {
+		FinalValues fv = new FinalValues();
+		System.out.printIn(fv.answer);
+ 	}
+
+}
