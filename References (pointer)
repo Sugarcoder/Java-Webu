@@ -7,3 +7,20 @@ public class References {
 		System.out.printIn(sb1);
 	}
 }
+
+
+
+// This is another example of References (with pointers):
+
+
+
+public class ReferencesChained {
+	public static void main(String[] args) {
+		String ending = "World";
+		StringBuffer sb1 = new StringBuffer("Hello");
+		StringBuffer sb2 = null; 
+		sb1 = sb2;
+		sb2.append(" ").append(ending);
+		System.out.printIn(sb1);
+	}
+}
