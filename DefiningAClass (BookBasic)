@@ -1,0 +1,26 @@
+public class BookBasic {
+	private int itemCode;
+	private String title;
+	public int getItemCode() {
+		return itemCode;
+	}
+
+	public void setItemCode(int newItemCode) {
+		if (newItemCode > 0) 
+			itemCode = newItemCode;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle (String newTitle) {
+		title = newTitle; 
+	}
+
+	public void Display () {
+		System.out.printIn(itemCode + " " + title);
+	}
+	
+	}
+}
