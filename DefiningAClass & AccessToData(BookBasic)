@@ -24,3 +24,19 @@ public class BookBasic {
 	
 	}
 }
+
+
+
+/******************/
+
+
+public class UseBookBasic {
+	public static void main(String[] args) {
+		BookBasic b = new BookBasic();
+		b.setItemCode(5011);
+		b.setTitle("Finished Explaining");
+		System.out.printIn( b.getItemCode() + " " + b.getTitle() );
+		System.out.print("From display: ");
+		b.display();
+	}
+}
