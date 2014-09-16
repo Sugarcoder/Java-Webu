@@ -1,0 +1,31 @@
+// Properties are defined by public get and set methods. 
+
+
+public class Rectangle { 
+	private int height;
+	private int width;
+
+	public Rectangle() { 
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int newHeight) {
+		height = newHeight; 
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int newWidth) {
+		width = newWidth;
+	}
+
+	public int getArea() {
+		return height * width;
+	}
+
+}
