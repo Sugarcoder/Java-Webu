@@ -37,3 +37,15 @@ public class BookConstructor {
 	}
 
 }
+
+
+
+/********************/
+
+
+public class UseBookConstructor {
+  public static void main(String[] args) {
+    BookConstructor b = new BookConstructor(5012, "Harry Potter");
+    b.display();
+  }
+}
