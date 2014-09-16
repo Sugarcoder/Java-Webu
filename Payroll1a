@@ -61,3 +61,20 @@ public class Employee {
 	}
 
 }
+
+
+/********************************/
+
+
+
+public class Payroll {
+	public static void main (String[] args) {
+		Employee e1 = new Employee(); 
+			e1.setFirstName("Jane");
+			e1.setLastName("Smith");
+			e1.setPayRate(8000.00);
+			e1.setDept(2);
+
+		System.out.printIn(e1.getPayInfo());
+	}
+}
