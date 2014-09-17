@@ -1,3 +1,13 @@
+public class Employee {
+
+	private int id = 0;
+	private String firstName;
+	private String lastName;
+	private int dept;
+	private double payRate;
+	
+	
+	
 public class Employee(String firstName, String lastName, int dept, double payRate) {
 	setFirstName(newFirstName);
 	setLastName(newlastName);
@@ -6,18 +16,12 @@ public class Employee(String firstName, String lastName, int dept, double payRat
 }
 
 
+
 public class Employee() { }
+	
+	
 
-
-
-
-public class Employee {
-
-	private int id = 0;
-	private String firstName;
-	private String lastName;
-	private int dept;
-	private double payRate;
+	
 	
 	public int getId() {
 		return id;
