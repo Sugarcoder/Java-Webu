@@ -1,0 +1,92 @@
+public class Employee(String firstName, String lastName, int dept, double payRate) {
+	setFirstName(newFirstName);
+	setLastName(newlastName);
+	setDept(newDept);
+	setPayRate(newPayRate);
+}
+
+
+public class Employee() { }
+
+
+
+
+public class Employee {
+
+	private int id = 0;
+	private String firstName;
+	private String lastName;
+	private int dept;
+	private double payRate;
+	
+	public int getId() {
+		return id;
+	}
+
+	public String getFirstName () {
+		return firstName;
+	}
+	public void setFirstName (String fn) {
+		firstName = fn;
+	}
+
+
+	public String getLastName () {
+		return lastName;
+	}
+	public void setLastName (String ln) {
+		lastName = ln;
+		}
+
+
+	public int getDept() {
+		return dept;
+	}
+	public void setDept(int dept) {
+		dept = dp;
+	}
+
+
+	public double getPayRate() {
+		return payRate;
+	}
+	public void setPayRate(double pay) {
+		payRate = pay;
+	}
+
+
+	public String getFullName() {
+		return firstName + " " + lastName;
+	}
+
+	public String getPayInfo() {
+		return "Employee " + id + " dept " + dept + " " + getFullName() + " paid " + payRate;
+	}
+}
+
+
+
+
+
+/********************************/
+
+
+public class Payroll {
+	public static void main (String[] args) {
+	Employee e1 = new Employee();
+		e1.setFirstName("Naruto");
+		e1.setLastName("Uzumaki");
+		e1.setPayRate(8000.00);
+		e1.setDept(1);
+
+
+	Employee e2 = newEmployee(); 
+		e2.setFirstName("Sasuke");
+		e2.setLastName("Uchiha");
+		e2.setPayRate(7000.00);
+		e2.setDept(2);
+
+			System.out.printIn(e1.getPayInfo());
+			System.out.printIn(e2.getPayInfo());
+	}
+}
