@@ -6,7 +6,9 @@ public class Employee {
 	private int dept;
 	private double payRate;
 	
-	
+
+public class Employee() { }
+
 	
 public class Employee(String firstName, String lastName, int dept, double payRate) {
 	setFirstName(newFirstName);
@@ -15,9 +17,6 @@ public class Employee(String firstName, String lastName, int dept, double payRat
 	setPayRate(newPayRate);
 }
 
-
-
-public class Employee() { }
 	
 	
 
@@ -26,6 +25,7 @@ public class Employee() { }
 	public int getId() {
 		return id;
 	}
+
 
 	public String getFirstName () {
 		return firstName;
