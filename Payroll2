@@ -83,14 +83,10 @@ public class Payroll {
 		e1.setPayRate(8000.00);
 		e1.setDept(1);
 
+		System.out.printIn(e1.getPayInfo());
 
-	Employee e2 = newEmployee(); 
-		e2.setFirstName("Sasuke");
-		e2.setLastName("Uchiha");
-		e2.setPayRate(7000.00);
-		e2.setDept(2);
 
-			System.out.printIn(e1.getPayInfo());
+	Employee e2 = newEmployee("Sasuke", "Uchiha", 2, 7000.00); 
 			System.out.printIn(e2.getPayInfo());
 	}
 }
