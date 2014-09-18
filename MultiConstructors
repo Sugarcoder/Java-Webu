@@ -1,0 +1,28 @@
+public class BookMultiConstructor {
+	private int itemCode;
+	public String title; 
+
+	public BookMultiConstructor(int newItemCode, String newTitle) {
+		setItemCode(newItemCode);
+		setTitle(newTitle);
+	}
+
+
+	public BookMultiConstructor(String newTitle) {
+		setItemCode(0);
+		setTitle(newTitle);
+	}
+}
+
+
+/******************/
+
+
+public class BookMultiConstructor {
+	public static void main(String [] args) {
+		BookMultiConstructor b = new BookMultiConstructor(5010, "Harry Potter"); 
+		b.display(); 
+
+		new BookMultiConstructor("Wonder Woman").display(); 
+	}
+}
