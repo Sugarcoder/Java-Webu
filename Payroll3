@@ -14,11 +14,34 @@ public class Employee() { }
 
 
 public class Employee(String firstName, String lastName, int dept, double payRate) {
-	setFirstName(newFirstName);
-	setLastName(newlastName);
-	setDept(newDept);
-	setPayRate(newPayRate);
+	setFirstName(firstName);
+	setLastName(lastName);
+	setDept(dept);
+	setPayRate(payRate);
 }
+
+
+public class Employee(String firstName, String lastName) {
+	setFirstName(firstName);
+	setLastName(lastName);
+}
+
+
+
+public class Employee(String firstName, String lastName, int dept) {
+	setFirstName(firstName);
+	setLastName(lastName);
+	setDept(dept);
+}
+
+
+
+public class Employee(String firstName, String lastName, double payRate) {
+	setFirstName(firstName);
+	setLastName(lastName);
+	setPayRate(payRate);
+}
+
 
 
 	
@@ -72,7 +95,6 @@ public class Employee(String firstName, String lastName, int dept, double payRat
 
 
 /********************************/
-
 
 public class Payroll {
 	public static void main (String[] args) {
