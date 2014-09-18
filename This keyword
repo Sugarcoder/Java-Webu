@@ -1,0 +1,13 @@
+// The "this" keyword provides a reference to the current object. It is used to resolve name conflicts.
+
+
+// Instead of using this line: 
+
+public void useMyApples(MyApples x) { }
+
+
+
+// Use this line instead for the "this" keyword: 
+
+MyApples mA = new YourApples();
+yA = useMyApples(this);
