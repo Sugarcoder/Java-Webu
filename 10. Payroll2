@@ -11,10 +11,10 @@ public class Employee() { }
 
 	
 public class Employee(String firstName, String lastName, int dept, double payRate) {
-	setFirstName(newFirstName);
-	setLastName(newlastName);
-	setDept(newDept);
-	setPayRate(newPayRate);
+	setFirstName(FirstName);
+	setLastName(lastName);
+	setDept(dept);
+	setPayRate(payRate);
 }
 
 	
