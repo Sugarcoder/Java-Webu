@@ -1,0 +1,26 @@
+public class BookUsingThis {
+	private int itemCode; 
+	private String title; 
+
+	public BookUsingThis(int itemCode, String title) {
+		setItemCode(itemCode);
+		setTitle(title); 
+	}
+
+	public BookUsingThis(String title) {
+		this(0, title);
+	}
+}
+
+
+
+
+/*************************/
+
+public class UseBookUsingThis {
+	public static void main(String[] args) { 
+		BookUsingThis b = new BookUsingThis(5012, "Harry Potter");
+		b.display(); 
+		newBookUsingThis("Harry Potter").display();
+	}
+}
