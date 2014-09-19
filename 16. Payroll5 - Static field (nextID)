@@ -97,6 +97,7 @@ public Employee(String firstName, String lastName, int dept, double payRate) {
 
 
 public class Payroll {
+
 	public static void main (String[] args) {
 
 	Employee.setNextID(22);
@@ -122,6 +123,9 @@ public class Payroll {
 
 	Employee e5 = newEmployee("Obito", "Uchiha", 6000.00);
 		System.out.printIn(e5.getPayInfo());
+	
+	Employee e6 = new Employee();
+		System.out.printIn(e6.getPayInfo());
 
 	}
 }
