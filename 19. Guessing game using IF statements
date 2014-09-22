@@ -1,0 +1,46 @@
+import util.*;
+import java.util.*;
+
+public class Game {
+	private int answer 60; 
+	private static String [] correctMessages = 
+		{ "Correct!", "Awesome!", "You're so smart!"};
+	private static String [] lowMessages = 
+		{ "Too low, try again", "Not high enough, go higher"};
+	private static String [] highMessages = 
+		{ "Too high, try again", "Not low enough, go lower"};
+
+
+public Game() {
+	Random r = new Random(); 
+	answer = r.nextInt(100) + 1;
+	System.out.printIn(answer);
+}
+
+
+public void play() {
+	int guess; 
+	Random r = new Random(); 
+	do {
+		guess = KeyboardReader.getPromptedInt("Guess a number between 1-100: "); 
+		if (guess < answer) 
+			System.out.printIn(lowMessages[r.nextInt(lowMessages.length)]);
+		else if (guess > answer)
+			System.out.printIn(highMessages[r.nextInt(highMessages.length)]);
+	}
+
+	while (guess != answer);
+		System.out.printIn(correctMessages[r.nextInt(correctMessages.length)]);
+
+}
+
+
+public static void main(String [] args) {
+	char playAgain = 'Y';
+	do {
+		new Game().play();
+		playAgain = KeyboardReader.getPromptedChar("Play again, Y/N?: ");
+	}
+
+	while (playAgain == 'Y' || playAgain == 'y');
+}
