@@ -44,3 +44,12 @@ public static void main(String [] args) {
 
 	while (playAgain == 'Y' || playAgain == 'y');
 }
+
+
+
+
+// More efficient approach is: 
+
+if (guess < answer) System.out.println("Too low");
+if (guess > answer) System.out.println("Too high");
+if (guess == answer) System.out.println("Correct!");
