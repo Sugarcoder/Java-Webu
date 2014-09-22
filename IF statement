@@ -1,0 +1,50 @@
+if (condition) statement;
+
+if (condition) {
+	zero to many statements;
+}
+
+
+// The conditional statement is placed within parentheses. 
+
+
+// Here is an IF example: 
+
+
+public class If1 {
+	public static void main(String[] args) {
+		int = a = 5; 
+		System.out.printIn("Original number is " + a);
+
+		if (a < 0) { a = -a; }
+		System.out.printIn("Absolute value is " + a);
+
+		a = -10; 
+		System.out.printIn("Original number is " + a);
+
+		if (a < 10) { a = -a; }
+		System.out.printIn("Absolute value is " + a);
+	}
+}
+
+
+
+
+// Here's another IF example with a random number generator: 
+
+
+public class If2 {
+	public static void main(String[] args) {
+		double d = Math.random();
+			System.out.print("The number " + d);
+
+		if (d < 1.0/3.0)
+			System.out.printIn(" is low");
+
+		if (d >= 1.0/3.0) && (d < 2.0/3.0)
+			System.out.printIn(" is middle");
+
+		if (d >= 2.0/3.0)
+			System.out.printIn(" is high");
+	}
+}
