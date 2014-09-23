@@ -1,0 +1,115 @@
+package employees;
+import finance.TransactionException;
+
+public class Employee {
+ 
+  private static int nextId = 1;
+  
+  public static void setNextId(int nextId) {
+    Employee.nextId = nextId;
+  }
+
+  private int id = nextId++;
+  private String firstName;
+  private String lastName;
+  private double payRate;
+
+  private double ytdPay;
+  private Payment[] payments = new Payment[12]; 
+  private int paymentCount = 0;  
+ 
+  public Employee() { }
+
+  public Employee(String firstName, String lastName, double payRate) {
+    setFirstName(firstName);
+    setLastName(lastName);
+    setPayRate(payRate);
+  }
+  
+  public static int getNextId() {
+    return nextId;
+  }
+  
+  public static void setNextId(int nextId) {
+    Employee.nextId = nextId;
+  }
+  
+  public int getId() { return id; }
+
+  public String getFirstName() { return firstName; }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+  
+  public String getLastName() { return lastName; }
+  
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getFullName() { return firstName + " " + lastName; }
+
+  public double getPayRate() { return payRate; }
+  
+  
+  
+  // I threw an exception below, so the payrate would not accept anything less than 0.
+  
+  
+  public void setPayRate(double payRate)
+        throws IllegalArgumentException {
+    if (payRate >= 0) {
+        this.payRate = payRate;
+      }
+      
+    else {
+      throw new IllegalArgumentException(
+            "Pay amount: " + payRate + " must not be negative");
+    }
+  }
+  
+  
+  
+
+  public double getYtdPay() { return ytdPay; }
+  
+  public Payment createPayment() {
+    Payment p = new Payment(payRate);
+    payments[paymentCount++] = p;
+    return p;
+  }
+
+  public void printPaymentHistory() {
+    for (Payment p : payments) {
+      System.out.println(p);
+    }
+  }
+  
+  public class Payment {
+    private double amount;
+    private boolean posted;
+    
+    public Payment(double amount) {
+      this.amount = amount;
+    }
+
+    public boolean process() throws TransactionException {
+      if (!posted) {
+        ytdPay += amount;
+        posted = true;
+        System.out.println(getFullName() + " paid " + amount);
+        return true;
+      } 
+      
+      else {
+        throw new TransactionException("Transaction already processed");
+      }
+    }
+    
+    public String toString() {
+      return getFullName() + " payment of " + amount;
+    }
+    
+  } 
+}
