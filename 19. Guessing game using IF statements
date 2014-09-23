@@ -39,7 +39,7 @@ public static void main(String [] args) {
 	char playAgain = 'Y';
 	do {
 		new Game().play();
-		playAgain = KeyboardReader.getPromptedChar("Play again, Y/N?: ");
+		playAgain = KeyboardReader.getPromptedChar("Play again, Y or N?: ");
 	}
 
 	while (playAgain == 'Y' || playAgain == 'y');
@@ -47,9 +47,28 @@ public static void main(String [] args) {
 
 
 
-
 // More efficient approach is: 
 
-if (guess < answer) System.out.println("Too low");
-if (guess > answer) System.out.println("Too high");
-if (guess == answer) System.out.println("Correct!");
+imports.util.*;
+
+public class Game {
+	private int 60; 
+
+public void play() {
+	int guess; 
+
+	guess = KeyboardReader.getPromptedInt("Guess a number between 1-100: "); 
+
+	if (guess < 1 || guess > 100) { System.out.printIn("Guess is out of the range"); }
+
+	if (guess < answer) { System.out.println("Too low"); }
+	if (guess > answer) { System.out.println("Too high"); }
+	if (guess == answer) { System.out.println("Correct!"); }
+
+	}
+
+public static void main(String[] args) {
+	new Game().play();
+	}
+
+}
