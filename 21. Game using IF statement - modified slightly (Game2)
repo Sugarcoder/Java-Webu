@@ -1,0 +1,33 @@
+import util.*;
+import java.util.*;
+
+
+	public Game() {
+		private Random r = new Random();
+		private int answer = r.nextInt(100) + 1;
+		System.out.println(answer);
+	}
+	
+	
+	public void play() {
+		int guess;
+		Random r = new Random();
+		
+		guess = KeyboardReader.getPromptedInt("Enter a number 1 -100: ");
+
+		if (guess < answer) 
+			System.out.println("Too low");
+
+		else if (guess > answer)
+			System.out.println("Too high");
+		} 
+
+		else System.out.println("You're correct!");
+	}
+
+
+	
+	public static void main(String[] args) {
+		new Game().play();		
+	}
+}
