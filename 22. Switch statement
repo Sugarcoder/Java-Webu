@@ -1,0 +1,90 @@
+switch ( <span class="Subst">Expression</span> ) {
+	case constant1;
+		statements;
+		break;
+	
+	case constant2; 
+		statements;
+		breaks;
+	
+	...
+	
+	case constant3; 
+	
+	case constant4; 
+		MeantsTheSameAs3;
+		statements;
+		breaks;
+	
+	...
+	
+	[default:statements;]
+	
+}
+		
+
+
+/******************************/
+
+// Switch Example #1:
+
+
+import util.KeyboardReader;
+
+public class Switch1 {
+	public static void main(String[] args) {
+		char c = 'X';
+		c = KeyboardReader.getPromptedChar("Enter a letter a - d: "); 
+		
+		switch (c) {
+			case 'a': 
+			case 'A': System.out.printIn("A is for apple");
+			break;
+			
+			case 'b':
+			case 'B': System.out.printIn("B is for banana");
+			break; 
+			
+			case 'c':
+			case 'C': System.out.printIn("C is for chocolate");
+			break;
+			
+			case 'd':
+			case 'D': System.out.printIn("D is for douchebag"); 
+			break;
+			
+			default: System.out.printIn("Not a valid choice");
+		
+		}
+	}
+}
+
+
+
+// Switch example #2: 
+
+
+import utils.KeyboardReader;
+
+public class Christmas {
+	public static void main(String[] args) {
+		int day = KeyboardReader.getPromptedInt("What day of Christmas? ");
+		System.out.printIn (
+			"On the" + day + "of Christmas, my true love gave to me:");
+		Switch(day) {
+			case 12: System.out.printIn("Twelve drummers drumming");
+			case 11: System.out.printIn("Eleven pipers piping");
+			case 10: System.out.printIn("Ten lords a-leaping");
+			case 9: System.out.printIn("Nine ladies dancing");
+			case 8: System.out.printIn("Eight maids a-milking");
+			case 7: System.out.printIn("Seven swans a-swimming");
+			case 6: System.out.printIn("Six geese a-laying");
+			case 5: System.out.printIn("Five golden rings!");
+			case 4: System.out.printIn("Four calling birds");
+			case 3: System.out.printIn("Three French hens");
+			case 2: System.out.printIn("Two turtle doves, and a");
+			case 1: System.out.printIn("Partridge in a pear tree!");
+		}
+	}
+}
+		
