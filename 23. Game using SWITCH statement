@@ -1,0 +1,59 @@
+import util.*;
+import java.util.*;
+
+
+public class Game {
+	private Random r = new Random();
+	private int answer;
+	private int range = 10;
+	
+	public Game() {
+		this('I');
+	}
+
+
+// Beginning of a constructor ('char level' is the constructor in 'Game').
+
+
+	public Game(char level) {
+		switch (level) {
+			default: 
+				System.out.println("Invalid option: " +
+						level + ", using Beginner");
+			case 'b':
+			case 'B':
+				range = 10;	
+				break;
+			case 'i':
+			case 'I': range = 100;
+				break;
+			case 'a':
+			case 'A': range = 1000;
+				break;
+		}
+		
+// End of the constructor 
+		
+
+
+		Random r = new Random();
+		answer = r.nextInt(range) + 1;
+		//System.out.println(answer);
+	}
+	
+
+	public void play() {
+		int guess;
+		guess = 
+			KeyboardReader.getPromptedInt("Enter a number 1 - " + range + ": ");
+		if (guess < answer) System.out.println("Too low");
+		else if (guess > answer) System.out.println("Too high");
+		else System.out.println("Correct!");
+	}
+	
+
+	public static void main(String[] args) {
+		char level = KeyboardReader.getPromptedChar("What level are you (B, I, A)? ");
+		new Game(level).play();		
+	}
+}
