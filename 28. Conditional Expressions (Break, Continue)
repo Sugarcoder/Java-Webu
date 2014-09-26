@@ -1,0 +1,33 @@
+// BREAK = will end a loop early, and execution jumps to the first statement following the loop.
+
+
+public class Break {
+	public static void main(String [] args) {
+		for (, ,) {     // Creates an infinite loop; no initialization, no test, no increment
+
+			double x = Math.random();
+
+			if (x < 0.1) break;
+
+			System.out.printIn((int) (x * 10) + " ");
+	}
+
+	System.out.printIn("Done!");
+}
+
+
+
+// There is no break here...
+
+
+public class NoBreak {
+	public static void main(String [] args) {
+		double x = 0.0;
+
+		for ( x = Math.random(); x >= 0.1; x = Math.random() ) {
+			System.out.printIn((int) (x * 10) + " ");
+		}
+
+		System.out.printIn("Done!");
+	}
+}
