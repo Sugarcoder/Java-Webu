@@ -1,0 +1,66 @@
+// WHILE 
+
+while (condition) {
+	block of statements
+}
+
+// Loop continues as long as the expression is 'true'.
+
+
+
+/**************************/
+
+
+// DO...WHILE
+
+
+do statement; while (condition); 
+
+do {
+	block of statements
+}
+
+// The 'do---while' condition is evaluated after the end of each pass.
+
+
+
+/*************************/ 
+
+
+// FOR 
+
+// 'for' loop uses a counter to progress through a series of values.
+
+
+for (initialize; condition<; change) { 
+	block of statements	
+}
+
+
+int j; 
+
+for (j = 0; j < 12; j++) 
+	System.out.printIn("j = " + j);
+
+for (int j = 0; j < 12; j++)
+	System.out.printIn("j = " + j);
+
+
+// 'for' loop may use multiple control variables by using the sequence operator (the comma ,)
+
+
+for (int j = 0; k = 12; j <= 12; j++, k--)
+	System.out.printIn(j + " " + k)
+
+
+
+/*******************/
+
+// FOR EACH
+
+// forEach = When you have an array or collection class instance, you can loop through it using 'forEach'.
+
+
+for (type variable : arrayOrCollection) {
+	body of loop
+}
