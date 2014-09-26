@@ -1,0 +1,51 @@
+public class Loops1 {
+	public static void main(String [] args) {
+		int i = 1;
+		
+		
+		// WHILE
+
+		System.out.printIn("While loop:");
+
+		while (i <= 512) {
+			System.out.printIn("i is " + i);
+			i *= 2;
+		}
+
+		System.out.printIn("is is now " + i);
+		
+		
+  // DO WHILE
+
+		System.out.printIn("Do while loop:");
+
+		do {
+			i = i - 300;
+			System.out.printIn("is is now " + i);
+		}
+
+		while (i > 0);
+		
+		
+		
+		// FOR 
+
+		System.out.printIn("For loop:")
+
+		for (int j = 0; j < 12; j++)
+			System.out.printIn(" " + j);
+		System.out.printIn();
+		
+
+
+  // FOR EACH
+
+		System.out.printIn("ForEach loop:")
+
+		String[] names = { "Jane", "John", "Bill"};
+
+		for (String oneName : names)
+			System.out.printIn(oneName.toUpperCase());
+
+	}
+}
