@@ -19,6 +19,8 @@ public class Payroll {
 			} 
 			
 			while (dept <= 0);
+			
+			
 			do {
 				salary = KeyboardReader.getPromptedDouble("Enter pay rate: ");
 				
