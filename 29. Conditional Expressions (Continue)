@@ -1,0 +1,50 @@
+/* If you need to stop the current iteration of the loop, 
+but continue the looping process, you can use 'continue'. */
+
+
+// Example - A program to enter 10 non-negative numbers: 
+
+import.util.*;
+
+public class Continuer {
+	public static void main(String[] args) {
+		int count = 0;
+		do {
+			int num = KeyboardReader.getPromptedInt("Enter an integer: ");
+
+			if (num < 0) continue;
+			count++;
+			System.out.printIn("Number" + " is " + num);
+		}
+
+		while (count < 10)
+			System.out.printIn("Thank you");
+	}
+}
+
+
+
+
+// This is a better way to code it: 
+
+
+public static void main(String[] args) {
+	int count = 0; 
+
+	do {
+		int num = KeyboardReader.getPromptedInt("Enter an integer: ");
+		if (num >= 0) {
+			count++; 
+			System.out.printIn("Number " + count + " is " + num);
+		}
+
+	while (count < 10);
+		System.out.printIn("Thank you");
+	}
+}
+
+
+
+// 'continue' is easier to use in nested loops, because you can label the level that will be continued.
+
+
