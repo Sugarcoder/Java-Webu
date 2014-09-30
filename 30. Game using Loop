@@ -1,0 +1,58 @@
+import util.*;
+import java.util.*;
+
+public class Game {
+	private Random r = new Random();
+	private int answer;
+
+	public Game() {
+		this('I');
+	}
+	
+	public Game(char level) {
+		switch (level) {
+			default: 
+				System.out.println("Invalid option: " +
+						level + ", using Beginner");
+			case 'b':
+			case 'B':
+				range = 10;	
+				break;
+			case 'i':
+			case 'I': range = 100;
+				break;
+			case 'a':
+			case 'A': range = 1000;
+				break;
+		}
+		Random r = new Random();
+		answer = r.nextInt(range) + 1;
+		//System.out.println(answer);
+	}
+	
+	
+	
+	public void play() {
+		int guess;
+		do {
+			guess = KeyboardReader.getPromptedInt("Enter a number 1 -100: ");
+			if (guess < answer) System.out.println("Too low");
+			else if (guess > answer) System.out.println("Too high");
+		} while (guess != answer);
+		System.out.println("Correct!");
+	}
+	
+	
+	
+// This loop will continue as long as the player selects "Y". 
+
+
+	public static void main(String[] args) {
+		char playAgain = 'Y';
+		do {
+			char level = KeyboardReader.getPromptedChar("What level (B, I, A)? ");
+			new Game(level).play();		
+			playAgain = KeyboardReader.getPromptedChar("Play again (y/n)?: ");
+		} while (playAgain == 'Y' || playAgain == 'y');				
+	}
+}
