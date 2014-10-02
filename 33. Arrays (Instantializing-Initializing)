@@ -1,0 +1,36 @@
+// Instantiate an object using 'new'.
+
+int[] nums;
+nums = new int[10];
+
+
+// Another example: 
+
+int[] moreNums;
+int size = 7;
+moreNums = new int[size];
+
+
+
+// You could also declare and instantiate all at once: 
+
+String[] names = new String[3];
+
+
+// An array can be initialized when it is created: 
+
+String[] names = { "Jane", "Jasmine", "Jenny"};  
+
+// OR
+
+String[] nums = new int[] { 2, 4, 6, 8, 10, 12 };
+
+
+
+// Example: 
+
+Book[] titles; 
+titles = new Book[] {
+	new Book(5011, "Harry Potter");
+	new Book(1234, "Mary Poppins");
+}
