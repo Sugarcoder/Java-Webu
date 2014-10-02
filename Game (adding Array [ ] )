@@ -1,0 +1,50 @@
+import util.*;
+import java.util.*;
+
+
+public class Game {                   // Added arrays to this game by using []
+	
+	private int answer = 67;
+	private static String [] correctMessages = 
+			{ "Correct", "You are awesome!", "Excellent!" };
+	private static String [] lowMessages = 
+			{ "Too low", "Try higher next time" };
+	private static String [] highMessages = 
+			{ "Too high", "Try lower next time" };
+	
+
+	public Game() {
+		Random r = new Random();             // Adding a Random variable 
+		answer = r.nextInt(100) + 1;           
+		System.out.println(answer);
+	}
+	
+
+	public void play() {
+		int guess;
+		Random r = new Random();           // Adding a Random variable to generate different answers.
+
+		do {
+			guess = KeyboardReader.getPromptedInt("Enter a number 1 -100: ");
+			if (guess < answer) 
+				System.out.println(lowMessages[r.nextInt(lowMessages.length)]);
+
+			// ".length" = passing the length of the array
+
+			else if (guess > answer) 
+				System.out.println(highMessages[r.nextInt(highMessages.length)]);
+		} 
+
+		while (guess != answer);
+		System.out.println(correctMessages[r.nextInt(correctMessages.length)]);
+	}
+	
+
+	public static void main(String[] args) {
+		char playAgain = 'Y';
+		do {
+			new Game().play();
+			playAgain = KeyboardReader.getPromptedChar("Play again (y/n)?: ");
+		} while (playAgain == 'Y' || playAgain == 'y');				
+	}
+}
