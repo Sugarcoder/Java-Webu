@@ -1,0 +1,33 @@
+// Examples: 
+
+
+public class Array2 { 
+	public static void main(String [] args) {
+		String[] names = new String[3];
+		names[0] = "Jane";
+		names[1] = "Jasmine";
+		names[2] = "Jenny";
+
+		printArray(names);                            // This will print the variables from the array above.
+	}
+
+	public static void main(String [] args) {
+		for (int i = 0; i < data.length; i++)
+			System.out.printIn(data[i].toUpperCase());
+		}	
+	}
+}
+
+
+
+String[] names = new String[3];
+	names[0] = "Jane";
+	names[1] = "Jasmine";
+	names[2] = "Jenny";
+printArray(names);              
+
+Strin[] names = new String[2];
+	names[0] = "Ruby";
+	names[1] = "Isis";
+printArray(names);
+
