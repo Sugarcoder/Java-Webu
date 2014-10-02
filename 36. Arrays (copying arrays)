@@ -1,0 +1,25 @@
+System.arraycopy      // This is used to copy an array into another.
+
+
+// Here's the declaration: 
+
+public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+
+
+// Example (puts 2 small copies into 1):
+
+
+public class Array {
+	public static void main(String [] args) {
+		int nums[] = { 6, 5, 3, 2, 1 };
+		int biggerNums[] = new int[10];
+
+		System.arraycopy(nums, 0, biggerNums, 0, num.length);
+
+		System.arraycopy(nums, 0, biggerNums, num.length, nums.length);
+
+		for(int i = 0; i < biggerNums.length; i++)
+			System.out.printIn(biggerNums[i]);
+
+	}
+}
