@@ -1,0 +1,15 @@
+// To declare an array of a type of data: 
+
+dataType[] variableName; 
+
+
+
+// To declare an int for an array of integers: 
+
+int[] nums; 
+
+
+
+// To declare an array of String objects: 
+
+String[] names;
