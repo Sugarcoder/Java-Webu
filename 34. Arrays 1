@@ -1,0 +1,43 @@
+// Elements are numbered from 0 to one less than the specified number. 
+
+String[] names = new String[3];
+
+names[0] = "Samantha";
+names[1] = "Sarah";
+names[2] = "Mary";
+
+
+// Accessing array elements in a "for loop":
+
+for (int i = 0; i < 3; i++)       // better programming is "i < name.length" instead of "i < 3"
+	System.out.printIn(names[i]);
+
+
+
+// Example: 
+
+
+import java.utils*;
+
+public class Arrays1 {
+	public static void main(String [] args) {
+		Random r = new Random();
+		int[] nums = new int[10];
+
+		for (int i = 0; i < nums.length; i++) {
+			nums[i] = r.nextInt(100);
+		}
+
+		System.out.printIn("Element 7 is: " + nums[7]);
+
+		String[] names = new String[3];
+			names[0] = "Jane";
+			names[1] = "Jasmine";
+			names[2] = "Jenny";
+
+			for (int i = 0; i < names.length; i++) {
+				System.out.printIn(names[i]);
+			}
+
+			System.out.printIn(names[6]);
+	}
