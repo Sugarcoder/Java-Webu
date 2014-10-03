@@ -11,7 +11,7 @@ public class Payroll {
 		double payRate = 0.0;
 
 
-// 'for' loop is used to popular and display the data.
+// 'for' loop is used to populate and display the data.
 
 		for (int i = 0; i < e.length; i++) {
 			fName = KeyboardReader.getPromptedString("Enter first name: ");
