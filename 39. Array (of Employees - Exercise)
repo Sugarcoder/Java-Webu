@@ -1,0 +1,55 @@
+import employees.*;
+import util.*;
+
+
+public class Payroll {	
+	public static void main(String[] args) {
+		Employee[] e = new Employee[5];
+		String fName = null;
+		String lName = null;
+		int dept = 0;
+		double payRate = 0.0;
+
+
+// 'for' loop is used to popular and display the data.
+
+		for (int i = 0; i < e.length; i++) {
+			fName = KeyboardReader.getPromptedString("Enter first name: ");
+			lName = KeyboardReader.getPromptedString("Enter last name: ");
+
+			do {
+				dept = KeyboardReader.getPromptedInt("Enter department: ");
+				if (dept <= 0) System.out.println("Department must be >= 0");
+			} 
+			while (dept <= 0);
+			
+			do {
+				payRate = KeyboardReader.getPromptedDouble("Enter pay rate: ");
+				if (payRate < 0.0) System.out.println("Salary must be >= 0");
+			} 
+			while (payRate < 0.0);
+			
+			e[i] = new Employee(fName, lName, dept, payRate);
+			System.out.println(e[i].getPayInfo());
+		}
+
+
+
+// After the loop is complete, I asked the user to enter a last name (for searching).
+
+
+		lName = KeyboardReader.getPromptedString("Enter last name to find: ");
+		boolean notFound = true;
+
+		for (int i = 0; i < e.length; i++) {
+			
+			if (lName.equalsIgnoreCase(e[i].getLastName())) {
+				System.out.println("Found: " + e[i].getPayInfo());
+				notFound = false;
+				break;
+			}
+		}
+
+		if (notFound) System.out.println("Not found");
+	}
+}
