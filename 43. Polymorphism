@@ -1,0 +1,33 @@
+
+/* If a derived class extends a base class, it is not only considered an instance, 
+but an instance of the base class as well. */
+
+
+// Examples of how to use Polymorphism: 
+
+
+// For any character that is used in a game, a "Entity" variable could be used: 
+
+
+Entity shrek = new Orge();
+Entity merlin = new Wizard(); 
+
+
+// For the player's character, a "Playable" variable could be used.
+
+
+Playable charles = new Prince();
+
+
+merlin.moveTo()  // This is legal, since that element is guaranteed to be there. 
+
+merlin.castSpell()   // This is illegal, because the "Entity" definition does not include it.
+
+
+// Example - The compiler would not know what object this code would create: 
+
+Entity x;
+	if (Math.random() < 0.5) x = new Wizard();
+	else x = new Trill();
+
+
