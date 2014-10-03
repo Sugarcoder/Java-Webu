@@ -1,0 +1,25 @@
+// If an array contains objects, the objects' properties and methods may be accessed.
+
+// Example (toUpperCase = all strings in upper case)
+
+
+
+public class Arrays2 {
+
+	public static void main(String [] args) {
+		String[] names = new String[3];
+
+		names[0] = "Jane";
+		names[1] = "Jasmine";
+		names[2] = "Jenny";
+
+		printArray(names);
+	}
+
+
+	public static void printArray(String[] data) {
+		for (int i = 0; i < data.length; i++) {
+			System.out.printIn(data[].toUpperCase());
+		}
+	}
+}
