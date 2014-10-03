@@ -1,6 +1,10 @@
 // If an array contains objects, the objects' properties and methods may be accessed.
 
-// Example (toUpperCase = all strings in upper case)
+// The notation uses the array variable name, the index in brackets, a dot, and the property or method.
+
+
+
+// Example (toUpperCase = all strings in upper case):
 
 
 
