@@ -1,0 +1,29 @@
+/* Arrays may have more than one dimension, 
+for things like graphic images (in pixels, x pixels across & y pixels vertically) 
+or weather information.  */
+
+
+datatype[][] ... [] arrayName;
+
+
+// Arrays are objects, and declaring a variable does not instantiate the array. 
+
+
+// To instantiate a multi-dimensional array:
+
+
+arrayName = new datatype[size1][size2] ... [sizeN];
+
+
+// Most significant listed first, least significant listed last. 
+
+
+// Examples: 
+
+int[][] picture = new int[480][640];            // This is a two-dimensional array (considered only as a single array)
+
+
+int[][][] picture = new int[3][480][640];      // image where data is stored in 3 layers
+
+
+
