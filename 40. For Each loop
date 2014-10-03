@@ -1,0 +1,11 @@
+// "for each" loop = loops through a collection of values without using an index.
+// The loop variable represents each individual value. 
+
+
+for (dataType loopVariables : collectionOfSameType) code using a loop variable;
+
+
+// color symbol (:) is read like "from"
+
+
+
