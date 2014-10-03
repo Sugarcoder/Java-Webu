@@ -5,7 +5,7 @@ import util.*;
 public class Payroll {	
 	public static void main(String[] args) {
 		Employee[] e = new Employee[5];
-		String fName = null;
+		String fName = null;                  // Leaving it as "null", so the user can input their own information.
 		String lName = null;
 		int dept = 0;
 		double payRate = 0.0;
