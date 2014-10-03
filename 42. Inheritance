@@ -1,0 +1,15 @@
+/* Inheritance = creates a new class by building upon an existing definition (extending the original class).
+
+When you extend a class, you can add new fields and methods, as well as change the behavior of existing methods (aka overridng).
+
+You can declare a method with the same signature.
+
+You can declare a field again, but it does not replace the original field.  */
+
+
+
+// All Java objects use inheritance.
+
+
+
+// Codes inside the main class (playerID, name, energy, position) has access to all elements of the base classes (Wizard - spells)
