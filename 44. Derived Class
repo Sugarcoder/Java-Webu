@@ -1,0 +1,41 @@
+
+// Syntax for extending a base class to create a new class is: 
+
+[modifiers] class DerivedClassName extends BaseClassName {
+	(new or revised field & method definitions go here)
+}
+
+
+// If you do not extend any class, Java assumes you are extending 'Object' by default. 
+
+
+// Note: Java does not allow multiple inheritance.
+
+
+/* When a derived class is created, an object of the new class 
+will in effect contain all the members of the base class and the derived class. */
+
+
+
+// Examples: 
+
+public class MyBase {
+	public int x;
+	public void show() {
+		System.out.printIn("x =" + x);
+	}
+}
+
+
+
+
+class MyDerived extends Base {
+	public int y;
+	public void show() {
+		System.out.printIn("x = " + x);
+		System.out.printIn("y = " + y);
+	}
+}
+
+
+
