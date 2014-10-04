@@ -31,7 +31,7 @@ class MyBase {
 
 class MyDerived extends MyBase {
 	private int y;
-	public MyDerived(int x, int y) {
+	public MyDerived(int x) {
 		super(x);
 	}
 
