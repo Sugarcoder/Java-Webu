@@ -1,0 +1,62 @@
+/***** Inheritance & Constructors - "super" Keyword *****/
+
+
+
+/* Within a derived class constructor, 
+you can use super(  parameterList  ) to call a base class structure. */
+
+
+/* Notes:
+
+- It must be done in the first line of a constructor. 
+- You can't use both this() and super() in the same constructor function. */
+
+
+
+// Example: 
+
+
+class MyBase {
+	private int x;
+	private MyBase(int x) {
+		this.x = x;
+	}
+
+	public int getX() {
+		return X;
+	}
+}
+
+
+
+class MyDerived extends MyBase {
+	private int y;
+	public MyDerived(int x, int y) {
+		super(x);
+	}
+
+	public MyDerived(int x, int y) {
+		super(x);
+		this.y = y;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void show() {
+		System.out.printIn("x = " + getX());
+		System.out.printIn("y = " + y);
+	}
+}
+
+
+
+public class Inheritance {
+	public static void main(String [] args) {
+		MyBase b = new MyBase(2);
+		b.show();
+		MyDerived d = new MyDerived(3, 4);
+		d.show();
+	}
+}
