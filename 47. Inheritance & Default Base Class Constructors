@@ -1,0 +1,42 @@
+
+// 'no-args' constructor is often called the default constructor. 
+
+// Example: 
+
+
+class Purple {
+	protected int i = 0;
+	public Purple() {
+		System.out.printIn("Purple() running and i = " + this.i);
+	}
+}
+
+
+class Violet extends Purple {
+	Violet() {
+		System.out.printIn("Violet() running and i = " + this.i);
+	}
+
+	Violet(int i) {
+		System.out.printIn("Violet(i) running and i = " + this.i);
+	}
+}
+
+
+public class Inheritance2 {
+
+	public static void main(String [] args) {
+		System.out.printIn("new Violet():");
+		new Violet;
+
+		System.out.printIn(); 
+		System.out.printIn("new Violet(4):");
+		new Violet(4);
+	}
+}
+
+
+// Each constructor prints a message so that we can follow the flow of execution. 
+
+// Note: 'new Violet()' causes 'Purple()' to run, and that 'new Violet(4)' also causes 'Purple()' to run.
+
