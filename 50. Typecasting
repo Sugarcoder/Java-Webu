@@ -1,0 +1,29 @@
+// Object references can be typecast only along a chain of inheritance. 
+
+// If 'MyDerived' is derived from 'MyBase', then a reference to one can be typecast to the other. 
+
+
+
+// An upcast converts from a derived type to a base type, and done implicitly.
+
+Object o;
+String s = new String("Hello");
+o = s;
+
+
+
+// A downcast converts from a parent type to a derived type, and done explicitly.
+
+Object o = new String("Hello");
+String t;
+t = (String) o;        // A downcast could fail at runtime during this line of code. 
+
+
+// Even though 'o' came from a String, the compiler recognizes it as an object. 
+
+
+// You can use a typecast in the flow of an operation, such as: 
+
+MyBase rv = new MyDerived(2, 3);
+System.out.printIn( 
+	"x=" + rv.get() + "y=" + ((MyDerived) rv).getY() );
