@@ -1,0 +1,137 @@
+package employees; 
+
+
+public class ExemptEmployee extends Employee {
+
+	public ExemptEmployee() {
+	}
+
+	public ExemptEmployee(String firstName, String lastName) {
+		super(firstName, lastName);
+	}
+
+	public ExemptEmployee(String firstName,String lastName, int dept) {
+		super(firstName, lastName, dept);
+	}
+
+	public ExemptEmployee(String firstName,
+				String lastName, double payRate) {
+		super(firstName, lastName, payRate);
+	}
+
+	public ExemptEmployee(String firstName, String lastName, int dept, 
+				double payRate) {
+		super(firstName, lastName, dept, payRate);
+	}	
+
+	public String getPayInfo() {
+		return "Exempt Employee " + getId() + " dept " + getDept() + 
+					 " " + getFirstName() + " " + getLastName() + 
+					 " paid " + getPayRate();
+	}
+}
+
+
+/**********************/
+
+
+public class NonexemptEmployee extends Employee {
+
+private double hours;
+	
+	public NonexemptEmployee() {
+	}
+
+	public NonexemptEmployee(String firstName, String lastName) {
+		super(firstName, lastName);
+	}
+
+	public NonexemptEmployee(String firstName,
+				String lastName, int dept) {
+		super(firstName, lastName, dept);
+	}
+
+	public NonexemptEmployee(String firstName, String lastName, 
+				double payRate, double hours) {
+		super(firstName, lastName, payRate);
+		setHours(hours);
+	}
+
+	public NonexemptEmployee(String firstName, String lastName, int dept, 
+				double payRate, double hours) {
+		super(firstName, lastName, dept, payRate);
+		setHours(hours);
+	}	
+
+// Getting and setting hours, then pointing to it. 
+
+
+	public double getHours() {
+		return hours;
+	}
+
+	public void setHours(double hours) {
+		this.hours = hours;
+	}
+
+
+// Getting the pay info 
+
+	public String getPayInfo() {
+		return "Non-Exempt Employee " + getId() + " dept " + getDept() + 
+					 " " + getFirstName() + " " + getLastName() + 
+					 " paid " + getPayRate() * hours;
+	}
+
+}
+
+
+/*************************/
+
+
+public class ContractEmployee extends Employee {
+
+		private double hours;
+	
+	public ContractEmployee() {
+	}
+
+	public ContractEmployee(String firstName, String lastName) {
+		super(firstName, lastName);
+	}
+
+	public ContractEmployee(String firstName,
+				String lastName, int dept) {
+		super(firstName, lastName, dept);
+	}
+
+	public ContractEmployee(String firstName, String lastName, 
+				double payRate, double hours) {
+		super(firstName, lastName, payRate);
+		setHours(hours);
+	}
+
+	public ContractEmployee(String firstName, String lastName, int dept, 
+				double payRate, double hours) {
+		super(firstName, lastName, dept, payRate);
+		setHours(hours);
+	}
+
+
+// Getting and setting hours, then pointing to it
+
+	public double getHours() {
+		return hours;
+	}
+
+	public void setHours(double hours) {
+		this.hours = hours;
+	}
+
+	public String getPayInfo() {
+		return "Contract Employee " + getId() + " dept " + getDept() + 
+					 " " + getFirstName() + " " + getLastName() + 
+					 " paid " + getPayRate() * hours;
+	}
+}
+
