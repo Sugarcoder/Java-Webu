@@ -1,0 +1,118 @@
+// 'static' methods in a class may not be overrided in a derived class.
+
+package employees;
+
+
+public class Person  {
+	private string firstName;
+	private string lastName;
+
+
+
+public Person() {
+}
+
+public Person(String firstName, String lastName) {
+	setFirstName(firstName);
+	setLastName(lastName);
+}
+
+public String getFirstName() { return firstName; }
+
+public void setFirstName(String firstName) {
+	this.firstName = firstName;
+}
+
+
+public String getLastName() { return lastName; }
+
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
+
+
+public String getFullName() {
+	return firstName + " " + lastName;
+}
+
+}
+
+
+/***** Adding Inheritance - 'extends' *****/
+
+
+package employees;
+
+public class Employee extends Person {            // 'extends' = Inheritance (Employee is inheriting from Person)
+
+public class Employss() {
+}
+
+public Employee(String firstName, String lastName) {
+	super(firstName, lastName);                         // 'super' = super constructor
+}
+
+public Employee(String firstName, String lastName, int dept) {
+	super(firstName, lastName);
+	setDept(dept);
+}
+
+public Employee(String firstName, String lastName, double payRate) {
+	super(firstName, lastName);
+	setPayRate(payRate);
+}
+
+
+public Employee(String firstName, String lastName, int dept, double payRate) {
+	this(firstName, lastName, dept);
+	setPayRate(payRate);
+}
+
+
+
+// This part of the code did not change in PayRoll.
+
+
+public String getPayInfo() {
+	return "Employee " + id + " dept " + dept + " " + 
+	getFullName() + " paid" + payRate;
+}
+
+
+}
+
+
+
+/***** Calling it *****/ 
+
+
+import employees.*;
+import util.*;
+
+public class Payroll {
+	public static void main(String[] args) {
+		String fName = null;
+		String lName = null;
+		int dept = 0;
+		double payRate = 0.00;
+		double hours = 0.0;
+
+		Employee e = null;
+
+		fName = KeyboardReader.getPromptedString("Enter first name: ");
+		lName = KeyboardReader.getPromptedString("Enter last name: ");
+		dept = KeyboardReader.getPromptedInt("Enter department: ");
+
+		do {
+			payRate = KeyboardReader.getPromptedFloat("Enter pay rate: ");
+
+			if (payRate < 0.0) 
+				System.out.printIn("Pay rate must be >= 0");
+			while (payRate < 0.0);
+
+		e = new Employee(fName, lName, dept, payRate);
+
+		System.out.printIn(e.getPayInfo());
+		}
+	}
+}
