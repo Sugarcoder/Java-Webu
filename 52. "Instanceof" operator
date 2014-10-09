@@ -1,0 +1,24 @@
+/* The 'instanceof' operator is used in comparisons - 
+it gives a boolean answer when used to compare an object reference with a class name. */
+
+referenceExpression instanceof ObjectType
+
+// Example: 
+
+if (e[i] instanceof Wizard) ((Wizard) e[i]).castSpell();   // This will be 'true'
+
+
+// Every object has a getClass() method that returns a class object.
+
+
+
+/******************/
+
+
+// A 'derived class' object's class will compare as "equal" to the base class. 
+
+// Example: 
+if (e[i].getClass().equals(Wizard.class))
+	((Wizard) e[i]).castSpell();
+
+// Note: It is rare that you would need to conduct this type of test.
