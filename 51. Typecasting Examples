@@ -81,7 +81,7 @@ public class EntityTest {
 		Switch (r) {
 			case 0: e = new Ogre(names[i]); break;
 			case 1: e = new Troll(names[i]); break;
-			case 2: e= new Wizard(names[i]); break; 
+			case 2: e = new Wizard(names[i]); break; 
 			case 3: e = new Prince(names[i]); break;
 			case 4: e = new Princess(names[i]); break; 
 		}
