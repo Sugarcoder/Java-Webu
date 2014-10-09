@@ -1,0 +1,111 @@
+// Using the 'Employee' subclasses (Inheritance)
+
+import employees.*;
+import util.*;
+
+public class Payroll {  
+	public static void main(String[] args) {
+		Employee[] e = new Employee[5];
+		String fName = null;
+		String lName = null;
+		int dept = 0;
+		double payRate = 0.0;
+		double hours = 0.0;
+
+
+		for (int i = 0; i < e.length; i++) {
+			char type = KeyboardReader.getPromptedChar("Enter type: E, N, or C: ");
+			
+			if (type != 'e' && type != 'E' && 
+					type != 'n' && type != 'N' && 
+					type != 'c' && type != 'C') {
+				System.out.println("Please enter a valid type");
+				i--;
+				continue;        
+			}
+
+			fName = KeyboardReader.getPromptedString("Enter first name: ");
+			lName = KeyboardReader.getPromptedString("Enter last name: ");
+
+			do {
+				dept = KeyboardReader.getPromptedInt("Enter department: ");
+
+				if (dept <= 0) System.out.println("Department must be >= 0");
+			} 
+			while (dept <= 0);
+
+
+			do {
+				payRate = KeyboardReader.getPromptedDouble("Enter pay rate: ");
+				
+				if (payRate < 0.0) System.out.println("Pay rate must be >= 0");
+			} 
+			while (payRate < 0.0);
+
+			switch (type) {
+				case 'e':
+				case 'E': e[i] = new ExemptEmployee(fName, lName, dept, payRate);
+						  break;
+
+				case 'n':
+				case 'N': do {
+								hours = KeyboardReader.getPromptedDouble("Enter hours: ");
+								
+								if (hours < 0.0) 
+									System.out.println("Hours must be >= 0");
+								} 
+								while (hours < 0.0);
+
+								e[i] = new NonexemptEmployee(fName, lName, dept, payRate, hours);
+								break;
+				case 'c':
+				case 'C': do {
+								hours = KeyboardReader.getPromptedDouble("Enter hours: ");
+								
+								if (hours < 0.0) 
+									System.out.println("Hours must be >= 0");
+								} 
+								while (hours < 0.0);
+
+								e[i] = new ContractEmployee(fName, lName, dept, payRate, hours);
+			}
+
+		}
+
+
+
+	// The 'Instanceof' test enables us to isolate just one type of employee to print (others will be skipped).
+
+		System.out.println();
+		System.out.println("Exempt Employees");
+		System.out.println("====== =========");
+		
+		for (Employee emp : e) {
+			if (emp instanceof ExemptEmployee) {                 
+				System.out.println(emp.getPayInfo());
+			}
+		}
+
+
+		System.out.println();
+		System.out.println("Nonexempt Employees");
+		System.out.println("======== =========");
+
+		for (Employee emp : e) {
+			if (emp instanceof NonexemptEmployee) {
+				System.out.println(emp.getPayInfo());
+			}
+		}
+
+
+		System.out.println();
+		System.out.println("Contract Employees");
+		System.out.println("======== =========");
+
+		for (Employee emp : e) {
+			if (emp instanceof ContractEmployee) {
+				System.out.println(emp.getPayInfo());
+			}
+		}
+	}
+}
