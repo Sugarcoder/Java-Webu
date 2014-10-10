@@ -1,0 +1,79 @@
+// Methods inherited from 'Object'
+
+class getClass()       // returns a class object
+
+Object clone()    // Creates a new object (clone of the original object)
+
+boolean equals(Object)      // does a comparison between this object and another object
+
+int hashCode()    // returns an integer value used by collection objects that store elements using a hashtable.
+
+String toString()    // converts this object to a string
+
+void finalize()   // called when the object is being garbage-collected
+
+
+// wait, notify, notifyAll = unlocking and locking an object in multi-threaded situations
+
+
+
+/********************/
+
+
+public class ObjectMethods {
+	int id;
+	String name; 
+	int age; 
+
+	ObjectMethods(int id, String name, int age) {
+		this.id = id; 
+		this.name = name;
+		this.age = age; 
+	}
+
+
+public boolean equals(Object x) {
+	if (x == this) return true;
+	else if (x instanceof ObjectMethods) {
+		ObjectMethods omx = (ObjectMethods) x;
+
+		return id == omx.id && name.equals(omx.name) && age == omx.age;
+	else return false;
+	}
+}
+
+public int hashCode() {
+	return id + age * 1000;
+}
+
+public String toString() {
+	return id + " " + name + " is " + age + " years old"; 
+}
+
+public Object clone() {
+	return new ObjectMethods(id, name, age);
+}
+
+public static void main(String [] args) {
+	ObjectMethods om1 = new ObjectMethods (1, "Jane", 6);
+	ObjectMethods om2 = new ObjectMethods (1, "Jessica", 6);
+	ObjectMethods om3 = new ObjectMethods (2, "Amy", 5);
+	ObjectMethods om4 = (ObjectMethods)om3.clone();
+
+	System.out.printIn("Printing an objectL " + om1);
+
+	if (om1.equals(om2))
+		System.out.printIn("om1 equals(om2)");
+
+	if (om1.equals(om3))
+		System.out.printIn("om1 equals(om3)");
+
+	if (om1.equals("Jane"))
+		System.out.printIn("om4 equals(\"Jane\")");
+	if (om1.equals(om4))
+		System.out.printIn("om1 equals(om4) which was cloned from om3");
+
+	System.out.printIn("Object class is: " + om1.getClass());
+}
+
+}
