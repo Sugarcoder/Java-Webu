@@ -1,0 +1,46 @@
+// Interfaces define a standardized set of commands that a class will obey. 
+
+// The commands are a set of methods that a class implements. 
+
+
+// Using an interface rather than inheritance to specify a certain set of methods allows a class to inherit from some other class. 
+
+
+// Interfaces can specify constants that are 'public', 'static', and 'final'.
+
+
+/********************/
+
+
+
+// The access level for the entire interface is usually public. 
+
+// There are situations where the interface could be private or protected (inner classes).
+
+
+[modifiers] interface InterfaceName {
+
+	// declaring methods 
+
+	[public abstract] returnType methodName1(arguments);
+
+
+	// defining constants 
+
+	[public static final] type fieldName = value; 
+
+}
+
+
+
+// Example: 
+
+
+public interface Printable {
+	void printAll();
+}
+
+
+
+// Interface requires only one method. 
+
