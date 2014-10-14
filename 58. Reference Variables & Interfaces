@@ -1,0 +1,51 @@
+// You can create a reference variable whos type is the interface name. 
+
+// Only the methods defined in ther interface are visible through a variable whose type is the interface. 
+
+
+// To access an interface-implementing class with an interface class reference: 
+
+[modifiers] InterfaceName variableName; 
+
+
+
+// Example: 
+
+/* Both 'Person' and 'Stock' implement 'Printable'.
+Therefore, I can create a reference variable to Printable, 
+and assign either a Person or Stock object to it. 
+
+Then, I will call the 'printAll()' method from the Printable reference variable.
+*/
+
+Person p = new Person();
+Stock s = new Stock();
+Printable pr; 
+
+pr = p;    
+
+// OR   pr = s;   // OR   pr = new Person();
+
+
+
+public class PrintableTest{
+	public static void main(String[] args) {
+		Person p = new Person(); 
+		Stock s = new Stock();
+
+		p.printAll(); 
+		s.printAll();
+
+		Printable pr; 
+		pr = p; 
+		pr.printAll();
+		pr = s; 
+		pr.printAll();
+	}
+}
+
+
+
+// Once 'pr' has been assigned a Printable instance. I can call 'pr.printAll();'
+
+
