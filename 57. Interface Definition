@@ -1,0 +1,58 @@
+// A class definition may implement one or more interface. 
+
+
+// To implement an interface: 
+
+[modifiers] class ClassName implements InterfaceName {
+
+	any desiered fields 
+
+	// implement required methods 
+
+	[modifiers] returnType methodName1(arguments) {
+		executable code
+	}
+
+	any other desired methods 
+
+}
+
+
+// A class may implement more than one interface (use a comma to separate interface name)
+
+[modifiers] class ClassName implements Interface1Name, Interface2Name {
+
+	// must implement all methods from all implemented interface
+}
+
+
+/*****************************/ 
+
+// Example 1: 
+
+public interface Printable {
+	void printAll();
+}
+
+
+// Example 2: 
+
+class Person implements Printable {
+	private String name = new String("Bill");
+	private int age = 22; 
+	publiv void printAll() {
+		System.out.printIn("Name is " + name + ", age is " + age);
+	}
+}
+
+class Stock implements Printable {
+	private String tickerSymbol = new String("ABC");
+	private int shares = 180;
+	private int currentPrice = 4000;   // in pennies
+	private void printAll() {
+		System.out.printIn(tickerSymbol + " " + shares + " shares at " + currentPrice);
+		System.out.printIn("Value: " + currentPrice * shares);
+	}
+}
+
+
