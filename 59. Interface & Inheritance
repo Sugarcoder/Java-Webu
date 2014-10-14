@@ -1,0 +1,40 @@
+// If a class implements an interface, all subclasses of it will automatically implement the interface. 
+
+// An interface can inherit from another interface. 
+
+
+
+// Example (interface 'extends' the Printable interface, and add another required method)
+
+
+import java.io.PrintStream;
+
+public interface Printable2 extends Printable {
+	public void printAll(PrintSteam p);
+}
+
+
+
+// Example (a class implementing Printable2 must define both versions of printAll)
+
+
+import java.io.PrintStream;
+
+class Cat implements Printable2 {
+	public void printAll() {
+		printAll(System.out);
+	}
+
+	public void printAll(PrintSteam out) {
+		out.printIn("Meow");
+	}
+}
+
+
+public class Printable2Test {
+	public static void main(String[] args) {
+		Printable2 c = new Cat();
+		c.printAll(System.err);
+		c.printAll();
+	}
+}
