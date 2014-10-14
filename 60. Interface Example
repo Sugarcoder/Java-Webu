@@ -1,0 +1,126 @@
+// In 'Payable.java' file:
+
+
+package finance.*; 
+
+public interface Payable {
+	public String getPayInfo();
+}
+
+
+/******************************/ 
+
+// This is the 'CheckPrinter.java' file, in the 'finance' package (package aka folder) 
+
+
+package finance;
+
+public class CheckPrinter {	
+
+	public static void printChecks(Payable[] payables) {
+		for (Payable p : payables) {
+			System.out.println(p.getPayInfo());
+		}
+	}
+}
+
+
+/*****************************/
+
+
+// In 'Employee.java' file: 
+
+
+package employees;
+import finance.Payable;
+
+public class Employee extends Person implements Payable {                 // All employee classes implement 'Payable'
+	private static int nextId = 1;
+	private int id = nextId++;
+	private int dept;
+	private double payRate;
+	
+
+	public Employee() {
+	}
+	public Employee(String firstName, String lastName) {
+		super(firstName, lastName);
+	}
+	public Employee(String firstName,String lastName, int dept) {
+		super(firstName, lastName);
+		setDept(dept);
+	}
+	public Employee(String firstName, String lastName, double payRate) {
+		super(firstName, lastName);
+		setPayRate(payRate);
+	}
+	public Employee(String firstName, String lastName, 
+				int dept, double payRate) {
+		this(firstName, lastName, dept);
+		setPayRate(payRate);
+	}
+
+
+  public static int getNextId() {
+    return nextId;
+  }
+  
+  
+  public static void setNextId(int nextId) {
+    Employee.nextId = nextId;
+  }
+  
+	public int getId() {	return id;	}
+
+	public int getDept() { return dept; }
+
+	public void setDept(int dept) {
+		this.dept = dept;
+	}
+
+	public double getPayRate() { return payRate; }
+
+	public void setPayRate(double payRate) {
+		this.payRate = payRate;
+	}
+
+
+	public String getPayInfo() {
+		return "Employee " + id + " dept " + dept + " " +
+					 getFirstName() + " " + getLastName() + 
+					 " paid " + payRate;
+	}
+}
+
+
+
+/******************************/
+
+// This goes in the 'Invoice.java' file (in 'vendors' package):
+
+
+package vendors;
+
+import java.util.Date;
+import finance.Payable;
+
+
+public class Invoice implements Payable {	
+	private String name;
+	private Date date;
+	private double amount;
+
+	public Invoice (String name, double amount) {
+		this.name = name;
+		this.date = new Date();
+		this.amount = amount;
+		
+	}
+
+
+	public String getPayInfo() {
+		return name + " " + date + " " + amount;
+	}
+
+}
+
