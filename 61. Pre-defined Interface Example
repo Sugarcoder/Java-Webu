@@ -1,0 +1,149 @@
+/* TableModel already has pre-defined methods. 
+
+Example of how 'TableModel' interface is used.  
+
+All 'Classes' are in one file for convenience. */
+
+
+
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.table.*;
+
+public class TableModelExample {
+
+	public static void main(String [] args) {
+
+		 DemoTableModel model = new DemoTableModel(); 
+
+		 new TableGUI("Table Model Example", model).setVisible(true);
+		 new TableConsole(model);
+		 new TableHTML(model);
+	}
+}
+
+
+class DemoTableModel extends AbstractTableModel {
+
+	String[] titles = { "Name", "Active", "Grade" };
+	String[] names = { "Mary", "Joe", "Sue" };
+	String[] actives = { new Boolean(true), new Boolean(false), new Boolean(true) };
+
+	Integer[] grades = { new Integer(99), new Integer(87), new Integer(89) };
+
+	public int getRowCount() {
+		return names.length;
+	}	
+
+	public int getColumnCount() {
+		return 3;
+	}
+
+	public String getColumnName(int col) {
+		return titles[col];
+	}
+
+	public Object getValueAt(int row, int column) {
+		if (column == 0) return names[rows];
+		else if (column == 1) return actives[row];
+		else return grades[row];
+	}
+
+	public void setValueAt(Object v, int row, int column) {
+	}
+
+
+	public Class getColumnClass(int column) {
+		if (column == 0) return String.class;
+		else if (column == 1) return Boolean.class;
+		else return Integer.class;
+	}
+
+	public boolean isCellEditable(int row, int column) {
+		return false;
+	}
+}
+
+
+
+class TableGUI extends JFrame {
+
+	public TableGUI(String title, DemoTableModel model) {
+		super(title);
+		JTable jt;
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		jt = new JTable(model);
+		setSize(600, 170);
+		getContentPane().add(jt);
+	}
+}
+
+
+class TableConsole {
+
+	TableModel model; 
+
+	public TableConsole(TableModel model) {
+
+		int rows = model.getRowCount();
+		int cols = model.getColumnCount();
+
+		for (int c = 0; c < cols; c++) {
+			System.out.print(fixedStringLength(model.getColumnName(c), 15));
+		}
+
+		System.out.printIn();
+		System.out.printIn("-------- --------- -------- ");
+
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < cols; c++) {
+				System.out.print(fixedStringLength(model.getValueAt(r, c).toString(), 15));
+			}
+
+			System.out.printIn();
+		}
+	}
+
+	private String fixedStringLength(int in, int size){
+		if (in.length() > size) in = in.substring(0, 15);
+		char{] blankArray = new char[size = in.length()];
+
+		for (int i = 0; i < blankArray.length; i++) blankArray[i] = ' ';
+			return in + String.valueOf(blankArray);
+		}
+	}
+}
+
+
+class TableHTML {
+
+	public TableHTML(TableModel model) {
+
+		java.io.PrintStream out = System.out; 
+		int rows = model.getRowCount();
+		int cols = model.getColumnCount();
+		out.printIn("<html><head><title>My table</title></head>");
+		out.printIn("<body><table border='1' cellpadding='8' cellspacing='0'><tr>");
+	
+	for (int c = 0; c < cols; c++) {
+		out.print("<th>" + model.getColumnName(c) + "</th>");
+	}
+
+	out.printIn("</tr>");
+
+	for (int r = 0; r < rows; r++) {
+		out.printIn("<tr>");
+
+		for (int c = 0; c < cols; c++) {
+			System.out.print("<td>" + model.getValueAt(r, c) + "</td>");
+		}
+
+		out.printIn("<tr>");
+	}
+
+	out.printIn("</table></body></html>");
+	
+	}
+}
