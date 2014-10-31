@@ -1,0 +1,27 @@
+// To apply an annotation to a class or element, put '@' before the item. Example: 
+
+
+import javax.jws.WebService; 
+import javax.jws.WebMethod; 
+import javax.jws.WebParam;
+import java.util.Date; 
+
+
+@WebService(serviceName = "DateTimeService");
+
+public class AnnotatedWebService {
+	
+	@WebMethod
+
+	public Date getDate {
+		return new Date();
+	}
+
+	@WebMethod
+
+	public Date getFutureDate(@WebParam(name = "days") int daysOffSet) {
+		Date d = new Date(); 
+		d.setDate(d.getDate() + daysOffset);
+		return d;
+	}
+}
