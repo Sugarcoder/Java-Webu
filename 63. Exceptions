@@ -1,0 +1,14 @@
+/* When an exception is generated, it is "thrown". 
+
+- When an exception is thrown, an exception object is created 
+and passed to the 'catch' block like a parameter to a method.  
+
+- All exception classes inherit from 'Exception', which inherits from 'Throwable'.
+
+- 'Error' class also inherits from 'Throwable'.
+
+- Your code must handle most exceptions, but not 'Error' subtypes (ex. OutofMemoryError, StackOverflowError).
+
+- Required to handle: checked Exceptions. 
+
+- Runtime Exceptions can be avoided with good coding practices.  */ 
