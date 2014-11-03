@@ -1,0 +1,57 @@
+// You can create your own exception class by extending an existing exception class. 
+
+[modifiers] class NewExceptionClassName extends ExceptionClassName {
+	create constructors that usually delegate to super-constructors
+}
+
+
+// You must override any constructors you wish to use (ex. Exception(), Exception (String message), etc.
+
+
+// If you want to throw the exception, use it with the new object from the exception class. 
+
+throw new ExceptionClassName(messageString);
+
+
+// Example: 
+
+
+class NewException extends Exception {
+  NewException() {
+    super();
+  }
+  NewException(String message) {
+    super(message);
+  }
+  NewException(String message, Throwable cause) {
+    super(message, cause);
+  }
+  NewException(Throwable cause) {
+    super(cause);
+  }
+}
+
+public class NewExceptionTest {
+
+  public void thrower() throws NewException {
+    if (Math.random() < 0.5) {
+      throw new NewException("This is my exception");
+    }
+  }
+
+  public static void main(String[] args) {
+    NewExceptionTest t = new NewExceptionTest();
+
+    try {
+      t.thrower();
+    }
+
+    catch(NewException e) {
+      System.out.println("New Exception: " + e.getMessage());
+    }
+    
+    finally {
+      System.out.println("Done");
+    }
+  }
+}
