@@ -1,0 +1,27 @@
+/* Java Collections API is a set of classes and interfaces designed to store multiple objects. 
+
+- Lists interface = Store objects in a specific order
+
+- Sets interface = rejects duplicates of any object already in the collection
+
+- Maps interface = store objects in association with a key, which is later used to look up and retrieve the object
+
+
+- Enumeration interface = provides a pair of methods that enable you to loop through a collection in a standardized manner
+
+- Iterator interface = allows an object to be removed from the collection through the iterator */
+
+
+
+/***********************/
+
+
+
+Useful methods for the 'Collection' interface: add(Object o), remove(Object o), contains(Object o), iterator()
+
+
+Useful methods for the Map interface: 
+get(Object key), put(Object key, Object value), remove(Object key), containsKey(Object key), containsValue(Object value), keySet(), entrySet()
+
+
+
