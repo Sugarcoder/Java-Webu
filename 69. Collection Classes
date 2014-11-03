@@ -1,0 +1,15 @@
+/* Collection Classes:
+
+- Vector = stores objects in a linear list.
+
+- ArrayList = stores objects in a linear list, in order of addition.
+
+- TreeSet = stores objects in a linear sequence, sorted by comparison with no duplicates. Also stores by Comparable items or use a separate comparator object to determin ordering. 
+
+
+- TreeMap = stores objects in a Map. (Keys must be Comparable items)
+
+- Hashtable = stores objects in a Map. (All methods are synchronized; predicts the collections framework; extends the Dictionary class)
+
+
+- HashSet = rejects dublicate entries. */ 
