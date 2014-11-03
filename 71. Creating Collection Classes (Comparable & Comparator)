@@ -1,0 +1,116 @@
+/* Creating Collection Classes: 
+
+
+- equals(Object o) and hashCode() = used by methods in the Collections API. 
+
+- compareTo(Obect o) = returns a negative integer, zero or positive integer that is less than, equal to, or greater than a specific object. 
+
+
+- TreeSet(Comparator c) = uses the specified comparator to compare the items for ordering. */
+
+
+
+// Comparable Example:  
+
+
+import java.util.*;
+ 
+public class UseComparable {
+  public static void main(String[] args)
+                     throws java.io.IOException {
+    String[] names = { "Sue", "Bill", "Tom", "Dave", "Andy",
+                       "Mary", "Beth", "Bill", "Mike" };
+    TreeSet sl = new TreeSet(Arrays.asList(names));
+    Iterator it = sl.iterator();
+    while (it.hasNext()) {
+        System.out.println(it.next());
+    }
+  }
+}
+
+
+
+
+// Comparator Example: 
+
+
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+import java.util.*;
+ 
+public class UseComparator {
+   
+  public static void main(String[] args) throws java.io.IOException {
+    String[] names = { "Sue", "Bill", "Tom", "Dave", "Andy",
+                       "Mary", "Beth", "Bill", "Mike" };
+ 
+    TreeSet s2 = new TreeSet(new ReverseComparator());
+    s2.addAll(Arrays.asList(names));
+     
+    Iterator it = s2.iterator();
+    while (it.hasNext()) {
+        System.out.println(it.next());
+    }
+  }
+}
+ 
+class ReverseComparator implements Comparator {
+  public int compare(Object o1, Object o2) {
+    if (o1 instanceof String && o2 instanceof String)
+      return -((String)o1).compareTo((String)o2);
+    else throw new ClassCastException("Objects are not Strings");
+  }
+}
+
+
+
+
+// Comparable & Comparator together Example: 
+
+
+import java.util.*;
+ 
+public class UseComparableAndComparator {
+   
+  public static void main(String[] args) throws java.io.IOException {
+    String[] names = { "Sue", "Bill", "Tom", "Dave", "Andy",
+                       "Mary", "Beth", "Bill", "Mike" };
+ 
+    TreeSet sl = new TreeSet(Arrays.asList(names));
+    Iterator it = sl.iterator();
+    while (it.hasNext()) {
+        System.out.println(it.next());
+    }
+ 
+    TreeSet s2 = new TreeSet(new ReverseComparator());
+    s2.addAll(Arrays.asList(names));
+     
+    it = s2.iterator();
+    while (it.hasNext()) {
+        System.out.println(it.next());
+    }
+  }
+}
