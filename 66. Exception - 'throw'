@@ -1,0 +1,13 @@
+// ' throw' is used to trigger the exception-handling process (or 'raise' in other languages).
+
+// How to use 'throw': 
+
+
+public void setAge(int age) throws IllegalArgumentException {
+	
+	if (age < 0)
+	   throw new IllegalArgumentException("Age must be >= 0");
+
+	else
+	   this.age = age; 
+}
