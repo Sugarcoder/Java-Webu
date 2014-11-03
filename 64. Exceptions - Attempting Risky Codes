@@ -76,3 +76,37 @@ public class IOExceptionTest {
 	   }
 	}
 }
+
+
+/***************************/ 
+
+
+// Using multiple 'catch' blocks (Example): 
+
+
+import util.Keyboard.Reader; 
+
+public class MultiCatchTest {
+	
+	public static void main(String[] args) {
+        int num1, num2;
+
+        try {
+           num1 = Keyboard.Reader.getPromptedInt("Enter a number: ");
+           num2 = Keyboard.Reader.getPromptedInt("Enter another number: ");
+           System.out.printIn(num1 + " / " + num2 " = " + num1/num2);
+        }
+
+        catch (NumberFormatException) {
+           System.out.printIn("Number Format Exception occurred");
+        }
+
+        catch (ArithmeticException e) {
+           System.out.printIn("Divide by Exception occurred");
+        }
+
+        catch (Exception e) {
+           System.out.printIn("General Exception occurred");
+        }
+	}
+}
