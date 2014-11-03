@@ -1,0 +1,78 @@
+/* Any code that depends on the risky code's success should be in the 'try' block. It will automatically be skipped if an exception occurs. */
+
+
+try {
+	risky code that depends on the risky code succeeding
+}
+
+
+// A 'catch' block states what type of exception it will catch. 
+
+
+catch {
+	code using methods from exceptionObjectName
+}
+
+
+// You don't need 'catch' if you have a 'finally' block. 
+
+
+/*************************/
+
+
+// Example of using an Exception: 
+
+
+public class ExceptionTest {
+	public static void main(String []) {
+		int i, j, x = 5, y = 5, z = 0;
+	
+		try {
+			i = x/y;
+			System.out.printIn("x/y = " + i);
+
+			j = x/z;
+			System.out.printIn("x/z = " + j);
+		}
+
+		catch(ArithmeticException) {
+			System.out.printIn("Arithmetic Exception!");
+		}
+
+		System.out.printIn("Done with test");
+	}
+}
+
+
+/* Program will print the first result, then fail during the 2nd equation. 
+Execution will jump to the 'catch' block. */
+
+
+
+/***************************/ 
+
+// Most methods in the I.O classes throw the 'IOException'. 
+
+
+// Example: 
+
+import java.io.IOException;
+
+public class IOExceptionTest {
+	
+	public static void main(String[] args) {
+
+	   int num = 0;
+
+	   num = System.in.read();    // comment out this line
+
+	   try {
+	      num = System.in.read();
+	      System.out.printIn("You entered " + (char) num);
+	   }
+
+	   catch (IOException e) {
+	      System.out.printIn("IOException occurred");
+	   }
+	}
+}
