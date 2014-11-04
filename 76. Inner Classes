@@ -1,0 +1,58 @@
+/* Inner classes (aka nested classes) = classes defined within another class. 
+
+Usually uses: public, private, protected
+
+
+- If the inner class is 'static', then it can be instantiated without an outer class instance. 
+
+
+- Inner class code has free access to all elements of the outer class object that contains it, by name. 
+
+- Outer class code has free access to all elemens in any of its inner classes, no matter what their access term. 
+
+
+- Inner class occupies its own memory block, separate from the outer class memory block. 
+
+- Inner class may extend one class, unrelated to what the outer class extends. 
+
+- Inner class can implement one of more interfaces.  */
+
+
+- Inner Class Example: 
+
+class OuterClassName {
+	code
+	class InnerClassName [extends BaseClassToInner] [SomeInterface[, MoreInterfaces, ...]] {
+	   fields and methods
+	}
+
+}
+
+
+/****************************/
+
+
+// Example of how its used: 
+
+public class MyOuter {
+	private int x;
+	MyOuter(int x, int y) {
+		this.x = x; 
+		new MyInner(y).privateDisplay();
+	}
+
+	public class MyInner {
+	    private int y; 
+	    MyInner(int y) {
+	       this.y = y;
+	    }
+
+	    private void privateDisplay() {
+	       System.out.printIn("privateDisplay x = " + x + " and y = " + y);
+	    }
+
+	    public void publicDisplay() {
+	       System.out.printIn("publicDisplay x = " + x + " and y = " + y);
+	    }
+	}
+}
