@@ -1,0 +1,12 @@
+/* A type parameter may set bounds on the type used, by setting an upper limit on the class used. 
+
+The 'extends' keyword is used to mean that the class must either be an instance of the specified boundary class or extends it. 
+If it is an interface, implement it.  */
+
+
+// Example: 
+
+public class EmployeeLocator<T extends Employee> { ... }
+
+public class CheckPrinter<T extends Payable> { ... }
+
