@@ -1,0 +1,27 @@
+/* When extending a generic class or implementing a generic interface, 
+you can maintain the generic type (Ex. public class ArrayList<T> implements List<T>.
+
+
+You can lock in the generic type like this: 
+
+public class EmployeeList extends ArrayList<E>  OR public class StringList implements java.util.List<String>
+
+
+
+/******************/
+
+// Methods can be generic, whether or not they are in a generic class. 
+
+// Example: 
+
+
+public <T> T chooseRandomItem(T[] items) {
+	Random r = new Random(); 
+	return items[r.nextInt(items.length)];
+}
+
+
+
+// The method is bounded by type T.
+
+// The type may be bounded with extends. 
