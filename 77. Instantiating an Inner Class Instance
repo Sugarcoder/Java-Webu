@@ -1,0 +1,28 @@
+// An inner class instance may be directly instantiated from code in the enclosing class.
+
+
+class OuterClassName {
+	code 
+	classinnerClassName {
+		code
+	}
+
+   public void someMethod() {
+        InnerCLassName variable = new InnerClassName();
+   }
+}
+
+
+// Example: 
+
+public class Inner1 {
+	public static void main(String [] args) {
+	    new MyOuter(1, 2);
+	}
+}
+
+
+// The code above simply creates an instance of the outer class, MyOuter. 
+
+
+// The 'MyOuter' constructor creates an instance of 'MyInner'.
