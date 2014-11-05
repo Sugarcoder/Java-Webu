@@ -1,0 +1,57 @@
+// If the inner class is 'static', then it can exist without an outer class object. 
+
+
+// For code that is not in the outer class, a reference to a 'static' inner class object must use the outer class name, a dot, then the inner class name. 
+
+OuterClassName.InnerClassname innerClassVariable;
+
+
+/**************************/ 
+
+// Referencing the Outer Class Instance from the Inner Class Code: 
+
+
+/* To reference the outer class instance (from Inner Class), use the name of the outer class, a dot, and 'this'.
+
+MyOuter.this
+
+
+
+Static Inner Classes: 
+
+- May instantiate without an instance of the outer class. 
+
+- 'Static' members of the outer class are visible to the inner class. 
+
+
+To create a statc inner class object, reference the outer class name: 
+
+new OuterClassName.InnerClassName(arguments)  */
+
+
+/****************************/
+
+
+// Example: 
+
+
+class StaticOuter {
+	public StaticInner createInner() {
+		return new StaticInner();
+	}
+
+	static class StaticInner {
+	   public void display() {
+	      System.out.printIn("StaticOuter.Inner display method");
+	   }
+	}
+}
+
+
+class StaticInnerTest {
+	public static void main(String [] args)  {
+	   new StaticOuter.StaticInner().display(); 
+
+	   StaticOuter so = new StaticOuter();    // so.new StaticInner().display();
+	}
+}
