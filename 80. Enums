@@ -1,0 +1,141 @@
+/* ENUMS (enumerators): 
+
+- Provide a set of pre-defined constants for indicating a small set of mutually exclusive values or states. 
+
+- Provide a type-safe way of creating a set of constants (since they are defined as a class).  */  
+
+- They are a set of unique object instances, and can have multiple fields. 
+
+- They are a class with a fixed number of possible instances (each of the possible instances are created automatically and stored as static field under the sanem name).
+
+
+/*************************/
+
+
+/* 
+How to create an 'enum' class: 
+
+- Instead of use 'class', use 'enum'
+- Within the curly braces, use a comma-separated list of names (end with semicolon) 
+*/
+
+// Example: 
+
+public enum EnumName {
+	value1, value2, value3, ...;
+}
+
+public enum Alignment {
+	left, right, center;            
+}
+
+
+// Three instances are created: Alignment.left, Alignment.right, Alignment.center
+
+
+/*
+public static EnumName[] values() = Method that returns an array containing all the values in order. 
+
+
+public EnumName valueOf(String name) = Method that returns the instance whose name matches the specified name.  */
+
+
+
+/**********************/
+
+
+/* 
+- Althought 'enums' may be top-level classes, they are often created as inner classes.
+
+- When used as an inner class, they are automatically 'static', so that an instance of an inner 'enum' does not have access to instance elements of the enclosing class. 
+
+
+
+// Example: 
+
+
+public class BookWithEnum {
+  private int itemCode;
+  private String title;
+  private double price;
+  private Category category;
+   
+  public enum Category { required, supplemental, optional, unknown };
+   
+  public BookWithEnum(
+        int itemCode, String title,
+        double price, Category category) {
+    setItemCode(itemCode);
+    setTitle(title);
+    setPrice(price);
+    setCategory(category);
+  }
+  public BookWithEnum(String title) {
+    setItemCode(0);
+    setTitle(title);
+    setPrice(0.0);
+    setCategory(Category.unknown);
+  }
+  public int getItemCode() {
+    return itemCode;
+  }
+  public void setItemCode (int itemCode) {
+    if (itemCode > 0) this.itemCode = itemCode;
+  }
+  public String getTitle() {
+    return title;
+  }
+  public void setTitle (String title) {
+    this.title = title;
+  }
+  public void setPrice(double price) {
+    this.price = price;
+  }
+  public double getPrice() {
+    return price;
+  }
+  public void setCategory(Category category) {
+    this.category = category;
+  }
+  public void setCategory(String categoryName) {
+    this.category = Category.valueOf(categoryName);
+  }
+  public Category getCategory() {
+    return category;
+  }
+  public void display() {
+    System.out.println(itemCode + " " + title + ": " + category +
+          ", Price: $" + price);
+  }
+}
+
+
+
+/* 
+
+'Category' is defined as an inner class to 'BookWithEnum'. 
+
+The full name of the complete set of values are: 
+- BookWithEnum.Category.required
+- BookWithEnum.Category.supplemental
+- BookWithEnum.Category.optional
+- BookWithEnum.Category.unknown
+
+
+From within the 'BookWithEnum' class, the set of values are accessed as: 
+- Category.required
+- Category.supplemental
+- Category.optional
+- Category.unknown
+
+
+
+/****************************/
+
+
+/* How to create an advanced 'enum' class: 
+
+- Declares as before. 
+- Declare any additional fields and accessor methods as with a regular class. 
+- Write one constructor. 
+- Within the curly braces, add a comma-separated list of names (they becomes individual values); this becomes a parameter list. 
