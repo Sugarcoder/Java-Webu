@@ -19,7 +19,9 @@ public class BookConstructor {
 	}
 
 	public void setItemCode(int newItemCode) {
-		if (newItemCode > 0) itemCode = newItemCode;
+		if (newItemCode > 0) {
+		     itemCode = newItemCode;
+		}
 	}
 
 
