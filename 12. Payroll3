@@ -49,18 +49,18 @@ public class Employee(String firstName, String lastName, double payRate) {
 		return id;
 	}
 
-	public String getFirstName () {
+	public String getFirstName() {
 		return firstName;
 	}
-	public void setFirstName (String fn) {
+	public void setFirstName(String fn) {
 		firstName = fn;
 	}
 
 
-	public String getLastName () {
+	public String getLastName() {
 		return lastName;
 	}
-	public void setLastName (String ln) {
+	public void setLastName(String ln) {
 		lastName = ln;
 		}
 
