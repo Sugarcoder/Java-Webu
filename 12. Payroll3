@@ -52,6 +52,7 @@ public class Employee(String firstName, String lastName, double payRate) {
 	public String getFirstName() {
 		return firstName;
 	}
+	
 	public void setFirstName(String fn) {
 		firstName = fn;
 	}
@@ -60,6 +61,7 @@ public class Employee(String firstName, String lastName, double payRate) {
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public void setLastName(String ln) {
 		lastName = ln;
 		}
@@ -68,6 +70,7 @@ public class Employee(String firstName, String lastName, double payRate) {
 	public int getDept() {
 		return dept;
 	}
+	
 	public void setDept(int dept) {
 		dept = dp;
 	}
@@ -76,6 +79,7 @@ public class Employee(String firstName, String lastName, double payRate) {
 	public double getPayRate() {
 		return payRate;
 	}
+	
 	public void setPayRate(double pay) {
 		payRate = pay;
 	}
@@ -94,7 +98,8 @@ public class Employee(String firstName, String lastName, double payRate) {
 
 
 
-/********************************/
+/**********/
+
 
 public class Payroll {
 	public static void main (String[] args) {
